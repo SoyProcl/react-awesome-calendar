@@ -1,6 +1,5 @@
 example
 node_modules
-src
 .babelrc
 .eslintrc.js
 .gitignore
