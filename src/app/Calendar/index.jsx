@@ -99,11 +99,11 @@ class Calendar extends React.PureComponent {
     const month = date.getMonth();
     const year = date.getFullYear();
     this.setState({
-        mode: dailyMode,
-        day,
-        month,
-        year,
-      },
+      mode: dailyMode,
+      day,
+      month,
+      year,
+    },
       this.onChange,
     );
   }
@@ -195,6 +195,7 @@ Calendar.propTypes = {
   ),
   onClickEvent: PropTypes.func,
   header: PropTypes.func,
+  language: PropTypes.string
 };
 
 export default Calendar;
