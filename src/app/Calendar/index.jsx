@@ -25,7 +25,7 @@ class Calendar extends React.PureComponent {
     super(props);
     const currentDate = new Date();
     this.state = {
-      mode: monthlyMode,
+      mode: dailyMode,
       day: currentDate.getDate(),
       month: currentDate.getMonth(),
       year: currentDate.getFullYear(),

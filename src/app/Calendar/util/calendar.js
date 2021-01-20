@@ -35,7 +35,6 @@ export const dateDiff = (start, end) => {
 const getStartOfCalendar = date => {
   let originalStartDate = new Date(date.getTime());
   let actualStartDate = new Date(date.getTime());
-  console.log("PAPITO", originalStartDate.getDay())
   switch (originalStartDate.getDay()) {
     case 0:
       actualStartDate.setDate(-5);
@@ -86,7 +85,6 @@ export const getCalendarMonth = (month, year) => {
     }
     calendar.push(week);
   }
-  console.log("CALENDARIO", calendar)
   return calendar;
 };
 
