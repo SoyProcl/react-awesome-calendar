@@ -71,10 +71,16 @@ export const getCalendarMonth = (month, year) => {
     for (let y = 0; y < 7; y++) {
       let currentDate = new Date(actualStartDate.getTime());
       currentDate.setDate(actualStartDate.getDate() + x * 7 + y);
+
       week.push({
         current: currentDate.getMonth() === originalStartDate.getMonth(),
         date: currentDate,
       });
+      if (y === 6) {
+        let aux = week[0];
+        week.splice(0, 1);
+        week.push(aux);
+      }
     }
     calendar.push(week);
   }
