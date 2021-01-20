@@ -71,5 +71,5 @@ export default class Monthly extends React.Component {
 }
 
 Monthly.defaultProps = {
-  daysOfWeek: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+  daysOfWeek: ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'],
 };

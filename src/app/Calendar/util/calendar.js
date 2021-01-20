@@ -35,12 +35,18 @@ export const dateDiff = (start, end) => {
 const getStartOfCalendar = date => {
   let originalStartDate = new Date(date.getTime());
   let actualStartDate = new Date(date.getTime());
-
-  if (originalStartDate.getDay() !== firstDayOfWeek) {
-    actualStartDate.setDate(
-      originalStartDate.getDate() - originalStartDate.getDay() + firstDayOfWeek,
-    );
+  console.log("PAPITO", originalStartDate.getDay())
+  switch (originalStartDate.getDay()) {
+    case 0:
+      actualStartDate.setDate(-5);
+      break;
+    case 1:
+      break;
+    default:
+      actualStartDate.setDate(2 - originalStartDate.getDay());
+      break;
   }
+
   return actualStartDate;
 };
 
@@ -52,6 +58,7 @@ const getEndOfCalendar = date => {
     actualEndDate.setDate(
       originalEndDate.getDate() - originalEndDate.getDay() + lastDayOfWeek,
     );
+
   }
   return actualEndDate;
 };
@@ -66,25 +73,20 @@ export const getCalendarMonth = (month, year) => {
   let dayDifference = dateDiff(actualStartDate, actualEndDate);
 
   let calendar = [];
+
   for (let x = 0; x < dayDifference / 7; x++) {
     let week = [];
     for (let y = 0; y < 7; y++) {
       let currentDate = new Date(actualStartDate.getTime());
       currentDate.setDate(actualStartDate.getDate() + x * 7 + y);
-
       week.push({
         current: currentDate.getMonth() === originalStartDate.getMonth(),
         date: currentDate,
       });
-      if (y === 6) {
-        let aux = week[0];
-        week.splice(0, 1);
-        week.push(aux);
-      }
     }
     calendar.push(week);
   }
-  console.log(calendar, "SOY EL CALENDAR MALDITO");
+  console.log("CALENDARIO", calendar)
   return calendar;
 };
 
