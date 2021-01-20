@@ -18,6 +18,7 @@ export default class Week extends React.PureComponent {
 
   returnWeeks(week) {
     if (Array.isArray(week) && week.length) {
+      console.log(week, "HOLA SOY EL RETURN WEEKS", JSON.stringify(week));
       return week.map((day, i) => {
         return (
           <Day
