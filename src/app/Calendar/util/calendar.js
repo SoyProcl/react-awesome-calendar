@@ -66,7 +66,6 @@ export const getCalendarMonth = (month, year) => {
   let dayDifference = dateDiff(actualStartDate, actualEndDate);
 
   let calendar = [];
-
   for (let x = 0; x < dayDifference / 7; x++) {
     let week = [];
     for (let y = 0; y < 7; y++) {
@@ -79,6 +78,7 @@ export const getCalendarMonth = (month, year) => {
     }
     calendar.push(week);
   }
+  console.log(calendar, "SOY EL CALENDAR MALDITO");
   return calendar;
 };
 
