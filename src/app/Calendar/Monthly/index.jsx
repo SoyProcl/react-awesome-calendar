@@ -54,7 +54,7 @@ export default class Monthly extends React.Component {
 
   returnDayOfWeekHeader() {
     return this.props.daysOfWeek.map((day, i) => {
-      return <div key={i}>{day}</div>;
+      return <div className="days" key={i}>{day}</div>;
     });
   }
 
