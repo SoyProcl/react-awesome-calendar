@@ -1,6 +1,6 @@
 {
   "name": "sp-react-awesome-calendar-spanish",
-  "version": "1.0.24",
+  "version": "1.0.26",
   "license": "MIT",
   "author": "Michael Hamilton",
   "description": "An easy to use React Calendar component",
@@ -17,10 +17,11 @@
   "bugs": "https://github.com/mikeham98/react-awesome-calendar/issues",
   "main": "build/index.js",
   "scripts": {
-    "start": "webpack --watch --mode development",
+    "dev": "webpack serve --config webpack.config.dev.js",
     "build": "webpack --mode production",
     "test": "jest",
-    "publishPackage": "npm run build && npm publish"
+    "publishPackage": "npm run build && npm publish",
+    "serve": "webpack serve --config webpack.config.dev.js"
   },
   "browserslist": [
     ">0.2%",
@@ -33,6 +34,7 @@
     "react-dom": "^16.7.0"
   },
   "dependencies": {
+    "4": "0.0.0",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -40,14 +42,17 @@
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-typeof-symbol": "^7.10.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
-    "@babel/plugin-transform-typeof-symbol": "^7.10.4",
     "@babel/register": "^7.10.5",
+    "@webpack-cli/serve": "^1.3.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.3.0",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.1",
     "enzyme": "^3.11.0",
@@ -78,7 +83,7 @@
     "style-loader": "^1.2.1",
     "unused-files-webpack-plugin": "^3.4.0",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
+    "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-md5-hash": "0.0.6"
   },

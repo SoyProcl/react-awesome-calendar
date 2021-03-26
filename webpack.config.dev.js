@@ -4,13 +4,21 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/app/index.js',
+    entry: './src/app/test.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'main.js',
     },
+    mode: 'production',
+    watch: true,
     module: {
         rules: [
+            {
+                test: /\.html$/,
+                use: [
+                    { loader: 'html-loader' }
+                ]
+            },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules|build)/,
@@ -18,17 +26,7 @@ module.exports = {
                     loader: 'babel-loader'
                 },
             },
-            {
-                test: /\.(ttf|woff|woff2|eot|png|jpg|gif|svg|base64|mp4)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 1000000,
-                        },
-                    },
-                ],
-            },
+
             {
                 test: /\.scss|css$/,
                 use: [
@@ -59,7 +57,12 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: [".js", ".jsx"],
+        extensions: ['.js', '.jsx'],
         symlinks: true
     },
+    devServer: {
+        contentBase: path.join(__dirname, 'build'),
+        compress: true,
+        port: 3006
+    }
 };
