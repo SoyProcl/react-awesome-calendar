@@ -3,6 +3,8 @@ import { getMonthName } from './util/calendar';
 import styles from './index.styles.scss';
 import { dailyMode, monthlyMode, yearlyMode } from './constants';
 
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+
 export default class Header extends React.PureComponent {
   returnTitle() {
     const { mode, current } = this.props;
@@ -57,10 +59,13 @@ export default class Header extends React.PureComponent {
         <h5>{this.returnTitle()}</h5>
         <div className={styles.calendarHeaderButtons}>
           <button onClick={this.props.onClickPrev}>
+            <AiOutlineLeft></AiOutlineLeft>
             {this.returnButtonText(prev)}
           </button>
           <button onClick={this.props.onClickNext}>
             {this.returnButtonText(next)}
+            <AiOutlineRight></AiOutlineRight>
+
           </button>
         </div>
       </div>
