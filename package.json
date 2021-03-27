@@ -18,7 +18,7 @@
   "main": "build/index.js",
   "scripts": {
     "dev": "webpack serve --config webpack.config.dev.js",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.config.js",
     "test": "jest",
     "publishPackage": "npm run build && npm publish",
     "serve": "webpack serve --config webpack.config.dev.js"

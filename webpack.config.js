@@ -9,11 +9,12 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
     },
+    mode: 'production',
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /(node_modules|build)/,
+                exclude: /(node_modules|build|server)/,
                 use: {
                     loader: 'babel-loader'
                 },

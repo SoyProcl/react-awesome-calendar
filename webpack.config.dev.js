@@ -4,12 +4,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/app/test.js',
+    entry: './server/test.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
     },
-    mode: 'production',
+    //mode: 'production',
+    mode: 'development',
     watch: true,
     module: {
         rules: [
