@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/app/test.js',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'main.js',
+        filename: 'index.js',
     },
     mode: 'production',
     watch: true,
