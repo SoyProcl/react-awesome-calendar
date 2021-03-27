@@ -85,7 +85,7 @@ export default class Day extends React.PureComponent {
           color={event.color}
           title={event.title}
           position={event.position}
-          // onClick={() => this.props.onClickEvent && this.props.onClickEvent(event)}
+        // onClick={() => this.props.onClickEvent && this.props.onClickEvent(event)}
         />
       );
     });
@@ -98,7 +98,7 @@ export default class Day extends React.PureComponent {
       const remainder = events.length - eventNumber;
       return (
         <span className={styles.dayEventsRemaining}>
-          {`${remainder} more...`}
+          {`${remainder} más...`}
         </span>
       );
     }
