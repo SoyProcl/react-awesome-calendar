@@ -1,15 +1,14 @@
 const path = require('path');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/app/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
+        libraryTarget: 'commonjs2'
     },
-    mode: 'production',
     module: {
         rules: [
             {
@@ -52,12 +51,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin('dist', {}),
-        new WebpackMd5Hash(),
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: './public/index.html',
-            filename: './index.html',
-        })
+        new WebpackMd5Hash()
     ],
     resolve: {
         extensions: [".js", ".jsx"],
